@@ -1,20 +1,20 @@
 import React from "react";
-import './index.css'
+import "./index.css";
+import AppLogo from '../../public/covid.png'
+import SearchForm from "../SearchForm";
 
-const Header = ({handleSubmit, handleChange, word}) => {
+const Header = ({ handleSubmit, handleChange, word }) => {
   return (
     <header className="App-header">
-      <p className="App-logo">LOGO</p>
-      <h1>Corona Tracker</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={word}
-          placeholder="Search by Country..."
-          onChange={handleChange}
-        />
-        <button>Get Data</button>
-      </form>
+      <div className="App-logo">
+        <img className="App-img" src={AppLogo} alt="covid-logo"/> 
+      </div>
+      <h1 className="App-Title">Corona Tracker</h1>
+      <SearchForm 
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        word={word}
+      />
     </header>
   );
 };

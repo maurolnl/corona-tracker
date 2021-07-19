@@ -1,0 +1,29 @@
+.footer {
+  background-color: var(--color-neutral-secondary);
+  padding: .5vh 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.footer-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-primary);
+  font-size: 1.3rem;
+}
+
+.footer-link {
+  color: var(--color-neutral-primary);
+  border-bottom: 2px solid var(--color-accent);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.footer-link:hover{
+  background-color: var(--color-accent);
+  color:var(--color-neutral-primary)
+}

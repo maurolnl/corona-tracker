@@ -11,3 +11,13 @@
 .App-logo {
   margin-bottom: 0;
 }
+
+.App-img {
+  max-height: 7rem;
+  object-fit: cover;
+  margin: auto 0;
+}
+
+.App-Title {
+  margin: 0;
+}
