@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './App.css'
+import { Link, Route } from 'wouter'
 import Main from './components/Main/Main'
 import Header from './components/Header/Header'
 import Footer from './components/Footer'
@@ -25,9 +26,10 @@ function App() {
         handleChange={handleChange}
         word={word}
       /> 
-      <Main 
-        keyword={keyword}
-      /> 
+      <Route 
+        path="/search/:keyword"
+        component={Main} 
+      />
      <Footer/> 
     </div>
   )

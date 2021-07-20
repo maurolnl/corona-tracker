@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import getCovidDataByCountry  from '../../services/getCovidByCountry'
 
-const Main = ({keyword}) => {
+const Main = ({params}) => {
+  const { keyword } = params
+
   const [countryData, setCountryData] = useState('')
   const [emptyDataSet, setEmptyDataSet] = useState(false)
   
