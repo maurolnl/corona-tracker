@@ -1,0 +1,7 @@
+.Search-Form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 2.3rem 0;
+}

@@ -8,6 +8,13 @@
   color: var(--color-neutral-primary) 
 }
 
+.Header-Container {
+  width: 40rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 .App-logo {
   margin-bottom: 0;
 }

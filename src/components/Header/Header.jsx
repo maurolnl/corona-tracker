@@ -6,15 +6,17 @@ import SearchForm from "../SearchForm";
 const Header = ({ handleSubmit, handleChange, word }) => {
   return (
     <header className="App-header">
-      <div className="App-logo">
-        <img className="App-img" src={AppLogo} alt="covid-logo"/> 
+      <div className="Header-Container">
+        <div className="App-logo">
+          <img className="App-img" src={AppLogo} alt="covid-logo"/> 
+        </div>
+        <h1 className="App-Title">Corona Tracker</h1>
+        <SearchForm 
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          word={word}
+        />
       </div>
-      <h1 className="App-Title">Corona Tracker</h1>
-      <SearchForm 
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        word={word}
-      />
     </header>
   );
 };

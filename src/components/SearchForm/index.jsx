@@ -1,8 +1,9 @@
 import React from 'react'
+import './index.css'
 
 const SearchForm = ({handleChange, handleSubmit, word}) => {
   return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="Search-Form">
         <input
           type="text"
           value={word}
