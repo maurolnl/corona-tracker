@@ -12,7 +12,8 @@ body {
 :root {
   --color-primary: #282c34;
   --color-secondary: #ef6565;
-  --color-accent: #282c34;
+  --color-secondary-light:#f0b9b9;
+  --color-accent: #8892c6;
   --color-neutral-primary: rgb(255, 255, 255);
   --color-neutral-secondary: black;
 }
@@ -43,4 +44,18 @@ button {
   font-size: 1.3rem;
   border: 1px solid var(--color-neutral-secondary);
   cursor:pointer;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 90%;
+  }
 }

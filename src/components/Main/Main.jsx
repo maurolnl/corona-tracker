@@ -1,41 +1,36 @@
-import React, { useEffect, useState } from "react";
-import getCovidDataByCountry  from '../../services/getCovidByCountry'
+import React from "react";
+import './index.css'
+import useCountryData from "../../hooks/useCountryData";
 
-const Main = ({params}) => {
-  const { keyword } = params
-
-  const [countryData, setCountryData] = useState('')
-  const [emptyDataSet, setEmptyDataSet] = useState(false)
-  
-  useEffect(async function() {
-    setEmptyDataSet(false)
-    const data = await getCovidDataByCountry(keyword)
-    console.log(data);
-    if(data === false) {
-      setEmptyDataSet(true)
-    } else {
-      setCountryData(data)
-    }
-  }, [keyword])
+const Main = ({keyword} = {keyword: null}) => {
+   const {countryData, emptyDataSet, loading} = useCountryData({keyword})
 
   return (
-    <main>
+    <>
+    {
+      loading === true ? "cargando..."
+      : 
+      <main className="main-card">
       {emptyDataSet === false && countryData !== undefined ? (
-        <div>
-          <h2>
+        <div className="card-container">
+          <h2 className="card-title">
             {countryData.Country !== undefined ? countryData.Country : ""}
           </h2>
-          <p>
+          <p className="card-date">
             {countryData.Date !== undefined
-              ? new Date(countryData.Date).toDateString()
+              ? `Date: ${new Date(countryData.Date).toDateString()}`
               : ""}
           </p>
-          <p>{countryData.Cases !== undefined ? countryData.Cases : ""}</p>
+          <p className="card-result">
+            {countryData.Cases !== undefined ? `Cases: ${countryData.Cases}` : ""}
+          </p>
         </div>
       ) : (
         ""
       )}
     </main>
+    }
+   </> 
   );
 };
 

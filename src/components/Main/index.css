@@ -1,0 +1,25 @@
+.main-card {
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.card-container {
+  background-color: var(--color-secondary-light);
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  border: 2px solid var(--color-accent);
+}
+
+.card-title {
+  font-size: 2em;
+}
+
+.card-date {
+  font-size: 1.5em;
+}
+
+.card-result {
+  font-size: 1.5em;
+}

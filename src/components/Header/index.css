@@ -24,6 +24,7 @@
   max-height: 7rem;
   object-fit: cover;
   margin: auto 0;
+  cursor: pointer;
 }
 
 .App-Title {
