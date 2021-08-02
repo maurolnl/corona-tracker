@@ -9,9 +9,10 @@ import { normalizeKeyword, capitalizeString } from "../../utils/formatStrings";
 
 const Main = ({keyword} = {keyword: null}) => {
   const {allData, loadingAllData} = useAllCovidData()
-  var {country, data} = getCountryData(normalizeKeyword(keyword), allData)
+  var {data , country} = getCountryData(normalizeKeyword(keyword), allData)
 
   const lastSearch = keyword || localStorage.getItem('lastKeyword')
+  const lastSearchNormalized = normalizeKeyword(lastSearch)
 
   const vaccinationData = {
     date: data?.date,
@@ -32,21 +33,18 @@ const Main = ({keyword} = {keyword: null}) => {
 
   return (
     <main className="main-container">
-      
       {
         keyword ? 
           <p className="search-result">
             Results for: {""}
-            <a className="search-result-highlight">{capitalizeString(lastSearch)}</a>
+            <a className="search-result-highlight">{capitalizeString(lastSearchNormalized)}</a>
           </p>
           : 
           <p className="search-result">
             Last search: {""}
-            <a className="search-result-highlight">{capitalizeString(lastSearch)}</a>
+            <a className="search-result-highlight">{capitalizeString(lastSearchNormalized)}</a>
           </p>
       }
-      
-
       {
         loadingAllData === true ? "cargando..."
         : 

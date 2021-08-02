@@ -1,16 +1,17 @@
 const getCountryData = (keyword, allData) => {
-  let countryData = {}
+  let data = {}
 
-  //console.log(allData);
   allData.filter(e => {
     const keywordToUse = keyword || localStorage.getItem('lastKeyword') 
     if(e?.location?.toLowerCase() === keywordToUse.toLowerCase())
     {
       localStorage.setItem('lastKeyword', keywordToUse)
-      countryData = e
+      data = e
     }
   })
-  const dataLength = countryData?.data?.length
+  console.log(data);
+  const country = data?.location 
+  /*const dataLength = countryData?.data?.length
 
   const country = countryData?.location
   let data = {}
@@ -18,7 +19,8 @@ const getCountryData = (keyword, allData) => {
     data = countryData.data[dataLength - 1]
   }
 
-  return {country, data}
+  */
+  return {data, country}
 }
 
 export default getCountryData

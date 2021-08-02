@@ -8,8 +8,12 @@ export default function useCountryData() {
   useEffect(async function() {
     setLoadingAllData(true)
 
-    const response = await getCovidData()
-
+    let response = []
+    const emptyDataSet = allData.length === 0 
+    if(emptyDataSet) 
+    {
+      response = await getCovidData()
+    }
     setAllData(response)
     setLoadingAllData(false)
   }, []) 
