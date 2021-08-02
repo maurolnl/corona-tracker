@@ -5,7 +5,7 @@ import useAllCovidData from '../../hooks/useAllCovidData'
 import getCountryData from "../../utils/getCountryData";
 import VaccinationCard from "../InfoCard/VaccinationCard";
 import NewCasesCard from "../InfoCard/NewCasesCard";
-import { normalizeKeyword } from "../../utils/normalizeKeyword";
+import { normalizeKeyword, capitalizeString } from "../../utils/formatStrings";
 
 const Main = ({keyword} = {keyword: null}) => {
   const {allData, loadingAllData} = useAllCovidData()
@@ -29,11 +29,6 @@ const Main = ({keyword} = {keyword: null}) => {
     total_cases: data?.total_cases,
     total_deaths: data?.total_deaths
   }
-
-  const capitalizeString = (toCapitalize) => {
-    return toCapitalize.charAt(0).toUpperCase() + toCapitalize.slice(1)
-  }
-
 
   return (
     <main className="main-container">

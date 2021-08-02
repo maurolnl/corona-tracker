@@ -3,3 +3,4 @@ export const formatNumber = (numberToFormat) => {
 
   return formatter.format(numberToFormat)
 }
+

@@ -4,3 +4,7 @@ export const normalizeKeyword = (keyword) => {
   }
   return keyword.replace('%20', ' ')
 } 
+
+export const capitalizeString = (toCapitalize) => {
+    return toCapitalize.charAt(0).toUpperCase() + toCapitalize.slice(1)
+}
