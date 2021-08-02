@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.css'
 import { Route } from 'wouter'
 import Home from './pages/Home/index' 

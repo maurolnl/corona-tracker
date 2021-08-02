@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import getCovidDataByCountry from "../services/getCovidByCountry"
+import getCovidData from "../services/getCovidData"
 
 export default function useCountryData({keyword} = { keyword: null }) {
   const [countryData, setCountryData] = useState('')

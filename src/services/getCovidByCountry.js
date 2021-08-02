@@ -1,19 +1,6 @@
 import axios from 'axios'
 import getDate from '../utils/getDate'
 
-const urlCovidDataOWID = 'https://covid.ourworldindata.org/data/owid-covid-data.json'
-
-export default getCovidData = async () => {
-  try {
-    const response = await axios.get(urlCovidDataOWID)
-
-    return response.data
-  } catch (e){
-    console.log(e);
-
-    return false
-  }
-}
 
 const getCovidDataByCountry = async (country) => {
   const {today, yesterday} = getDate()
