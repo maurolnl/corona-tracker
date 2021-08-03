@@ -6,6 +6,7 @@ import getCountryData from "../../utils/getCountryData";
 import VaccinationCard from "../InfoCard/VaccinationCard";
 import NewCasesCard from "../InfoCard/NewCasesCard";
 import { normalizeKeyword, capitalizeString } from "../../utils/formatStrings";
+import Spinner from "../Spinner";
 
 const Main = ({keyword} = {keyword: null}) => {
   const {allData, loadingAllData} = useAllCovidData()
@@ -46,7 +47,7 @@ const Main = ({keyword} = {keyword: null}) => {
           </p>
       }
       {
-        loadingAllData === true ? "cargando..."
+        loadingAllData === true ? <Spinner/> 
         : 
         <div className="main-cards">
         {country !== undefined ? (

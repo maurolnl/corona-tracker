@@ -23,7 +23,7 @@ const SearchForm = () => {
         placeholder="Search by Country..."
         onChange={handleChange}
       />
-      <button>Get Data</button>
+      <button>Search</button>
     </form>
   );
 };
