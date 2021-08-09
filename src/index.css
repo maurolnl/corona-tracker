@@ -47,6 +47,19 @@ button {
   cursor:pointer;
 }
 
+a {
+  color: var(--color-neutral-primary);
+  border-bottom: 2px solid var(--color-secondary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+a:hover{
+  background-color: var(--color-secondary);
+  color:var(--color-neutral-primary)
+}
+
 *{
   box-sizing: border-box;
 }

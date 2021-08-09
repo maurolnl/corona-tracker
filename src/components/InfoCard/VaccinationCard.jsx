@@ -34,6 +34,7 @@ const VaccinationCard = ({vaccinationData}) => {
           ? `Last Update: ${new Date(vaccinationData.date).toDateString()}`
           : ""}
       </p>
+      
     </div>
   );
 };
