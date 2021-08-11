@@ -10,9 +10,13 @@ import Spinner from "../Spinner";
 
 const Main = ({ keyword } = { keyword: null }) => {
   const { allData, loadingAllData } = useAllCovidData();
-  var { data, country } = getCountryData(normalizeKeyword(keyword), allData);
 
-  const lastSearch = keyword || localStorage.getItem("lastKeyword");
+  const lastKeyword = localStorage.getItem("lastKeyword")
+  let lastSearch = keyword || lastKeyword;
+  if(lastSearch === null || lastSearch === undefined) lastSearch = "argentina"
+
+  var { data, country } = getCountryData(normalizeKeyword(lastSearch), allData);
+
   const lastSearchNormalized = normalizeKeyword(lastSearch);
 
   const vaccinationData = {
