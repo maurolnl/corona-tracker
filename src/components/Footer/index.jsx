@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <p className="footer-text">
         Made with ♡ by&nbsp;{""}
-        <a href="https:www.github.com/maurolnl" target="_blank" rel="noopener noreferrer">
+        <a href="https://maurolquiroga.site/" target="_blank" rel="noopener noreferrer">
           MauroLNL
         </a>
       </p>
