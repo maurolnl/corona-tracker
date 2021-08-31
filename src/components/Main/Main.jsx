@@ -7,6 +7,7 @@ import VaccinationCard from "../InfoCard/VaccinationCard";
 import NewCasesCard from "../InfoCard/NewCasesCard";
 import { normalizeKeyword, capitalizeString } from "../../utils/formatStrings";
 import Spinner from "../Spinner";
+import SearchResultLabel from '../SearchResultLabel/SearchResultLabel'
 
 const Main = ({ keyword } = { keyword: null }) => {
   const { allData, loadingAllData } = useAllCovidData();
@@ -41,44 +42,11 @@ const Main = ({ keyword } = { keyword: null }) => {
     <main className="main-container">
       {keyword ? (
         <>
-          <p className="search-result">
-            Results for: {""}
-            <a className="search-result-highlight">
-              {capitalizeString(lastSearchNormalized)}
-            </a>
-            {" "}
-            <p className="data-origin">
-              data fetched from{" "}
-              <a
-                href="https://ourworldindata.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="main-link"
-              >
-                OurWorldInData
-              </a>{")"}
-            </p>
-          </p>
+          <SearchResultLabel label="Results for: " searchResult={capitalizeString(lastSearchNormalized)}/>
         </>
       ) : (
         <>
-          <p className="search-result">
-            Last search: {""}
-            <a className="search-result-highlight">
-              {capitalizeString(lastSearchNormalized)}
-            </a>{" "}
-            <span className="data-origin">
-              (data fetched from{" "}
-              <a
-                href="https://ourworldindata.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="main-link"
-              > 
-                OurWorldInData
-              </a>{")"}
-            </span>
-          </p>
+          <SearchResultLabel label="Last search: " searchResult={capitalizeString(lastSearchNormalized)}/>
         </>
       )}
       {loadingAllData === true ? (
